@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
 	res.sendFile(__dirname + '/index.html');
 });
 
-app.post('/', (req, res) => {
+app.post('/image', (req, res) => {
 	const url = 'https://randomfox.ca/floof/';
 	const options = {
 		method: 'GET',
@@ -22,7 +22,11 @@ app.post('/', (req, res) => {
 			const parsedData = JSON.parse(data).image;
 			res.write('<h1>Hello</h1>');
 			res.write('<img src=' + parsedData + ' alt="foxes">');
-
+			res.write(
+				'<form action="/image" method="post">\
+			<button type="submit">New Picture</button>\
+		</form>',
+			);
 			res.send();
 		});
 	});
