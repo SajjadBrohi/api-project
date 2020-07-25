@@ -9,11 +9,7 @@ app.get('/', (req, res) => {
 	res.sendFile(__dirname + '/index.html');
 });
 
-<<<<<<< HEAD
-app.post('/image', (req, res) => {
-=======
-app.post('/', (req, res) => {
->>>>>>> 107c2d14364426d7c6e764baaa73dc65fdfeb2a2
+app.post('/image', (_req, res) => {
 	const url = 'https://randomfox.ca/floof/';
 	const options = {
 		method: 'GET',
@@ -26,15 +22,11 @@ app.post('/', (req, res) => {
 			const parsedData = JSON.parse(data).image;
 			res.write('<h1>Hello</h1>');
 			res.write('<img src=' + parsedData + ' alt="foxes">');
-<<<<<<< HEAD
 			res.write(
 				'<form action="/image" method="post">\
 			<button type="submit">New Picture</button>\
 		</form>',
 			);
-=======
-
->>>>>>> 107c2d14364426d7c6e764baaa73dc65fdfeb2a2
 			res.send();
 		});
 	});
