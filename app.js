@@ -20,7 +20,7 @@ app.post('/image', (_req, res) => {
 
 		response.on('data', (data) => {
 			const parsedData = JSON.parse(data).image;
-			res.write('<h1>Hello</h1>');
+			res.write('<h1>Fox Picture</h1>');
 			res.write('<img src=' + parsedData + ' alt="foxes">');
 			res.write(
 				'<form action="/image" method="post">\
